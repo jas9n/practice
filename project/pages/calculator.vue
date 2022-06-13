@@ -29,7 +29,7 @@
             <!-- fifth row -->
             <calc-btn @e="display('0')">0</calc-btn>
             <calc-btn @e="display('.')">.</calc-btn>
-            <calc-btn @e="evaluate">=</calc-btn>
+            <calc-btn @e="evaluate()">=</calc-btn>
             <calc-btn @e="display('+')">+</calc-btn>
         </div>
     </div>
@@ -43,23 +43,26 @@ export default {
             // can't use this method because  buttons have different functions
             // buttons: ["(", ")", "%", "AC", "7", "8", "9", "/", "4", "5,", "6", "x", "1", "2", "3", "-", "0", ".", "=", "+"]
             screen: "",
-            calc: [],
+            calc: "",
         }
     },
     created() {
-        screen = "";
+        this.screen = "";
+        // this.calc = "";
     },
     methods: {
         display(i) {
-            screen += i;
+            this.screen += i;
+            // this.calc += screen
             console.log(screen)
-            // console.log(screen)
+            // console.log(calc)
         },
         evaluate() {
             console.log("hello")
         },
         clear() {
-            screen = ""
+            this.screen = "";
+            this.calc = "";
         }
     }
 }
