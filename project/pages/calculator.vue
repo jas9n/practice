@@ -44,24 +44,28 @@ export default {
             // buttons: ["(", ")", "%", "AC", "7", "8", "9", "/", "4", "5,", "6", "x", "1", "2", "3", "-", "0", ".", "=", "+"]
             screen: "",
             calc: "",
+            answer: "",
+
+            // calc: "",
         }
     },
     created() {
         this.screen = "";
-        // this.calc = "";
+        this.calc = "";
+        this.answer = "";
     },
     methods: {
         display(i) {
             this.screen += i;
-            // this.calc += screen
-            console.log(screen)
-            // console.log(calc)
         },
         evaluate() {
-            console.log("hello")
+            this.calc = this.screen.value
+            this.answer = eval(this.calc)
+            console.log(this.screen.value)
         },
         clear() {
             this.screen = "";
+            this.x = "";
             this.calc = "";
         }
     }
