@@ -8,6 +8,7 @@
       <NuxtLink to="/calculator"><page-link class="hover:bg-purple-300">Calculator</page-link></NuxtLink>
       <NuxtLink to="/stopwatch"><page-link class="hover:bg-red-300">Stopwatch</page-link></NuxtLink>
       <NuxtLink to="/randomizer"><page-link class="hover:bg-indigo-300">Random Color</page-link></NuxtLink>
+      <NuxtLink to="/weather"><page-link class="hover:bg-blue-300">Weather</page-link></NuxtLink>
     </div>
   </div>
 </template>
