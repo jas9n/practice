@@ -13,7 +13,7 @@ html {
 body,
 html {
   overflow-x: hidden;
-  background-color: #151515;
+  background-color: #000;
   color: #fff;
 }
 
@@ -56,4 +56,16 @@ label,
 button {
     font-family: 'Poppins', sans-serif;
 }
-  
+
+/* working tailwinds colors
+black
+gray
+white
+red
+yellow
+green
+blue
+indigo
+purple
+pink
+*/

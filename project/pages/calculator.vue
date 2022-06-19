@@ -1,8 +1,8 @@
 <template>
     <div id="calculator" class="h-screen flex flex-col justify-center items-center">
-        <home-link/>
-        <h1 class="text-4xl px-3">Calculator</h1>
-        <div id="screen" class="h-24 w-64 py-4 flex justify-end items-end">
+        <home-link class="hover:text-purple-300"/>
+        <h1 class="text-4xl px-3 text-purple-300">Calculator</h1>
+        <div id="screen" class="h-24 pt-8 flex justify-center items-center">
             <p class="text-2xl tracking-widest">{{ screen }}</p>
         </div>
         <div id="buttons" class="grid grid-cols-4 grid-rows-5 gap-4">
@@ -61,7 +61,7 @@ export default {
         evaluate() {
             // console.log(typeof this.answer)
             if (typeof eval(this.screen) === 'number') {
-                this.answer = Math.round((eval(this.screen) + Number.EPSILON) * 10000000) / 10000000
+                this.answer = Math.round((eval(this.screen) + Number.EPSILON) * 1000000) / 1000000
                 this.screen = this.answer
             } else {
                 this.screen = "undefined"
