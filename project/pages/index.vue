@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="h-screen flex flex-col justify-center items-center">
     <div id="title" class="p-6 flex flex-col justify-center items-center">
-      <h1 class="text-5xl">Home</h1>
+      <h1 class="text-5xl pb-1">Home</h1>
       <p class="text-xl">Small JS Projects using Nuxt</p>
     </div>
     <div id="links" class="grid grid-cols-2 grid-rows-auto gap-4 md:grid-cols-3">
