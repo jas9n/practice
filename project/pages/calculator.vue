@@ -29,7 +29,7 @@
             <calc-btn @e="display('-')">-</calc-btn>
             <!-- fifth row -->
             <calc-btn @e="display('0')">0</calc-btn>
-            <calc-btn @e="display('0.')">.</calc-btn>
+            <calc-btn @e="display('.')">.</calc-btn>
             <calc-btn @e="evaluate()">=</calc-btn>
             <calc-btn @e="display('+')">+</calc-btn>
         </div>
