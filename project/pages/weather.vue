@@ -9,8 +9,9 @@
       id="app"
       class="w-64 h-64 mt-4 bg-blue-200 rounded-xl flex flex-col justify-center items-center"
     >
-      <p id="location" class="text-black">{{ location }}</p>
-      <p id="coords" class="text-black text-center">{{ coords }}</p>
+      <h2 id="temp" class="text-4xl text-black">{{ currentTemp }}</h2>
+      <h3 id="weather" class="text-2xl text-black">{{ currentWeather }}</h3>
+      <p id="location" class="text-lg text-black">{{ location }}</p>
     </div>
   </div>
 </template>
@@ -27,8 +28,9 @@ export default {
   name: 'WeatherApp',
   data() {
     return {
+      currentTemp: '',
+      currentWeather: '',
       location: '',
-      coords: '',
     }
   },
   async created() {
@@ -65,19 +67,28 @@ export default {
     console.log(this.location)
 
     // get weather data of location
-    // const weather = await this.$axios
-    //   .get('https://api.openweathermap.org/data/2.5/weather', {
-    //     params: {
-    //       lat: lat,
-    //       lon: lon,
-    //       key: 'd7b7ca5eae3b5be5327aaa4d8d36793d',
-    //     },
-    //   })
-    //   .catch((error) => {
-    //     console.log(error)
-    //   })
-    // this.weather = weather
-    // console.log(this.weather)
+    const getWeather = await this.$axios
+      .get('https://api.openweathermap.org/data/2.5/weather', {
+        params: {
+          lat: lat,
+          lon: lon,
+          appid: '92cd362c6a149d5b565332af16b11818',
+        },
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+    this.getWeather = getWeather.data
+    console.log(this.getWeather)
+    this.temp = getWeather.data.main.temp
+    // this.temp = this.temp - 273.15
+    // this.temp = this.temp * 1.8 + 32
+    this.currentTemp = `${
+      Math.round(((this.temp - 273.15) * 1.8 + 32 + Number.EPSILON) * 1) / 1
+    }°`
+    console.log(this.currentTemp)
+    this.currentWeather = getWeather.data.weather[0].main
+    console.log(this.currentWeather)
 
     // address to lat long
     let address = 'Brooklyn, NY, USA'
