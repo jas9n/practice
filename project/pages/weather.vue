@@ -81,8 +81,6 @@ export default {
     this.getWeather = getWeather.data
     console.log(this.getWeather)
     this.temp = getWeather.data.main.temp
-    // this.temp = this.temp - 273.15
-    // this.temp = this.temp * 1.8 + 32
     this.currentTemp = `${
       Math.round(((this.temp - 273.15) * 1.8 + 32 + Number.EPSILON) * 1) / 1
     }°`
