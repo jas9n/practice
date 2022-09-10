@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     randomize() {
-      this.rgb = this.colors[Math.floor(Math.random() * 100 + 1)]
+      this.rgb = this.colors[Math.floor(Math.random() * 100000 + 1)]
       document.querySelector('#colorRandomizer').style.backgroundColor =
         this.rgb
       document.querySelector('#screen').style.backgroundColor = this.rgb
